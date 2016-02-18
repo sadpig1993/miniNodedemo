@@ -1,0 +1,43 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="http://www.linkernetworks.com/js/libs/angular.min.js"></script>
+
+  </head>
+  <body ng-app="linker">
+
+<div ng-controller="test">
+      <img src ="http://f1.miyijia.com/img/linker.jpg" ng-show="img_show" style="width:100%;height:{{img_height}}%"  id="Barcelona"/>
+
+</div>
+
+    <script type="text/javascript">
+      var linker = angular.module('linker',[]);
+
+
+      linker.controller('test', ['$scope','$interval', function($scope,$interval) {
+        $scope.img_height=100;
+        $scope.img_show = true;
+        $interval(function(){
+          $scope.img_height -=1;
+          if ( $scope.img_height <= 0 ) {
+            $scope.img_show = false;
+          }
+        },16,100)
+      }]);
+
+        // linker.controller('test', ['$scope', '$timeout',function($scope, $timeout) {
+
+        //   $scope.img_height=100;
+        //   console.log(1234);
+        //   $timeout(function() {
+        //     console.log(123);
+        //     $scope.img_height -= 50;
+        //     document.getElementById('Barcelona').style.height = $scope.img_height + '%';
+        //   }, 1000);
+        // }])
+
+    </script>
+  </body>
+
+</html>
