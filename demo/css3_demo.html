@@ -1,0 +1,44 @@
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+
+
+<style type="text/css">
+  div{
+
+    background:pink;
+    position:fixed;
+    transition: 2000ms height;
+    transition: 2000ms width;
+     top:100px;
+    left:100px;
+  }
+  .start{
+       width:100px;
+    height:100px;
+  }
+  .end{
+    width:600px;
+    height:600px;
+  }
+</style>
+
+<div class="start"></div>
+<a href="javascript:;">点我</a>
+
+<script type="text/javascript">
+  $('a').on('click',function(){
+
+    if ($('div').hasClass('start')){
+
+      $('div').removeClass('start').addClass('end');
+      $('a').html('再点我')
+
+
+    }else{
+
+      $('div').removeClass('end').addClass('start');
+      $('a').html('点我')
+
+    }
+
+  })
+</script>

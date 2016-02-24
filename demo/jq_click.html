@@ -1,0 +1,24 @@
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+
+<div id='test'>
+    <ul>
+        <li id="test_li">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+
+<a href="javascript:;">新增一个li</a>
+<script type="text/javascript">
+    var i = 4
+
+    $('div').delegate('li','click',function(event){
+      alert($(event.currentTarget).html());
+    })
+
+    $('a').on('click',function(){
+      $('ul').append("<li>"+ i +"</li>");
+      i++;
+    });
+
+</script>
