@@ -18,12 +18,23 @@
       linker.controller('test', ['$scope','$interval', function($scope,$interval) {
         $scope.img_height=100;
         $scope.img_show = true;
+
+
         $interval(function(){
           $scope.img_height -=1;
           if ( $scope.img_height <= 0 ) {
             $scope.img_show = false;
           }
         },16,100)
+
+        if(typeof window.barcelona_flag !== 'undefined' ){
+          return;
+        }
+
+        // 执行你的其他代码
+
+        window.barcelona_flag = true;
+
       }]);
 
         // linker.controller('test', ['$scope', '$timeout',function($scope, $timeout) {
